@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td { width: 40px; height: 40px; text-align: center;}
+    </style>
+</head>
+<body>
+    <div id = 'gradient'></div>
+    <table border="1">
+        <tbody id = "multiplication"></tbody>
+    </table>
+    <div id = "randomDivs"></div>
+    <script>
+        // document 1
+        // document.write(`<table>`);
+        // for (let row = 0; row < 10; row++)
+        // {
+        //     document.write(`<tr>`);
+        //     for (let col = 0; col < 10; col++)
+        //     {
+        //         let color = (row + col) % 2 ? 'black' : 'white';
+        //         document.write(`<td style = 'background-color: ${color};'></td>`);
+        //     }
+        //     document.write(`</tr>`);
+        // }
+        // document.write(`</table>`);
+
+        // document 2
+        // let gradientDiv = document.getElementById('gradient');
+        // for (let i = 0; i < 8; i++)
+        // {
+        //     let val = 255 - i * 30;
+        //     let color = `rgb(${val}, ${val - 50}, ${255})`;
+            
+        //     gradientDiv.innerHTML += `<div style = "display: inline-block; width: 30px; height: 30px; background: ${color}; margin: 2px;"></div>`;
+        // }
+
+        // document 3
+        // let table = document.getElementById('multiplication');
+        // for (let i = 1; i <= 10; i++)
+        // {
+        //     let row = '<tr>';
+        //     for (let j = 1; j <= 10; j++)
+        //     {
+        //         let style = (i === 1 || j === 1) ? "style = 'background: orange'" : "";
+        //         row += `<td ${style}> ${i * j}</td>`;
+        //     }
+        //     row += "</tr>";
+        //     table.innerHTML += row;
+        // }
+
+        // document 4
+        let container = document.getElementById("randomDivs");
+        for (let i = 0; i < 30; i++)
+        {
+            let size = Math.floor(Math.random() * 30) + 10;
+            let color = `rgba(${Math.random()*255},${Math.random()*255},${Math.random()*255},0.7)`;
+            let top = Math.random() * 300;
+            let left = Math.random() * 300;
+            let div = `<div style="
+            width:${size}px;
+            height:${size}px;
+            background:${color};
+            border-radius:50%;
+            position:absolute;
+            top:${top}px;
+            left:${left}px;"></div>`;
+            container.innerHTML += div;
+        }
+        container.style.position = 'relative';
+        container.style.height = '350px';
+    </script>
+</body>
+</html>
