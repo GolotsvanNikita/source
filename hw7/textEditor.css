@@ -55,7 +55,8 @@ body
 
 .toolbar button:hover,
 .toolbar select:hover,
-.toolbar input[type="color"]:hover {
+.toolbar input[type="color"]:hover
+{
     background-color: #e0e0e0;
     transform: scale(1.05);
 }
