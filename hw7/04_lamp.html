@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <h2>Включаем свет</h2>
+  <p>JavaScript can change HTML attributes.</p>
+  <p>In this case JavaScript changes the src (source) attribute of an image.</p>
+  <button class="on">Turn on the light</button>
+  <img id="myImage" src="lamp/pic_bulboff.gif">
+  <button class="off">Turn off the light</button>
+  
+  <script>
+    /*
+    Задание.
+    
+    При нажании на кнопку Turn on изменить у изображения  src на pic_bulbon.gif
+    При нажании на кнопку Turn off изменить у изображения  src на pic_bulboff.gif
+    
+    Для изменения src:
+    el.src = 'path_img.gif'; 
+
+    */
+
+	const buttons = document.querySelectorAll('button');
+    const img = document.querySelector('img')
+
+    let eventOn = buttons[0].addEventListener('click', On);
+    let eventOff = buttons[1].addEventListener('click', Off);
+
+    function On()
+    {
+      img.src = 'lamp/pic_bulbon.gif';
+    }
+    function Off()
+    {
+      img.src = 'lamp/pic_bulboff.gif';
+    }
+  </script>
+</body>
+</html>

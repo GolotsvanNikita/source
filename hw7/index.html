@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <img class="image" src="https://www.scorchsoft.com/public/capabilities/head/react-native-logo-square.webp" alt="image">
+        <div class="controls">
+            <label>Hue: <input type="range" class="hue" min="0" max="360" value="0"></label>
+            <label>Grayscale: <input type="range" class="grayscale" min="0" max="100" value="0"></label>
+            <label>Contrast: <input type="range" class="contrast" min="0" max="200" value="100"></label>
+        </div>
+    </div>
+    <script>
+        const image = document.querySelector('.image');
+        const hueSlider = document.querySelector('.hue');
+        const grayscaleSlider = document.querySelector('.grayscale');
+        const contrastSlider = document.querySelector('.contrast');
+
+        hueSlider.addEventListener('input', updateFilters);
+        grayscaleSlider.addEventListener('input', updateFilters);
+        contrastSlider.addEventListener('input', updateFilters);
+
+        function updateFilters()
+        {
+            const hue = hueSlider.value;
+            const grayscale = grayscaleSlider.value;
+            const contrast = contrastSlider.value;
+
+            image.style.filter =
+            `
+                hue-rotate(${hue}deg)
+                grayscale(${grayscale}%)
+                contrast(${contrast}%)
+            `
+        }
+    </script>
+</body>
+</html>

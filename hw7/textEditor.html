@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="textEditor.css">
+    <title>Title</title>
+</head>
+<body>
+    <div class="toolbar">
+       <button class="bold" onclick="textBold()">B</button>
+       <button class="italic" onclick="textItalic()">I</button>
+       <button class="underline" onclick="textUnderline()">U</button>
+       <button class="reset" onclick="reset()">Tt</button>
+
+       <input type="color" class="color" onchange="setColor(this.value)">
+       <select class="fontSize" onchange="setSize(this.value)">
+           <option>14</option>
+           <option>16</option>
+           <option>18</option>
+           <option>20</option>
+       </select>
+       <select class="fontFamily" onchange="setFontFamily(this.value)">
+           <option value="Arial">Arial</option>
+           <option value="Verdana">Verdana</option>
+           <option value="Times New Roman">Times New Roman</option>
+           <option value="Georgia">Georgia</option>
+       </select>
+        <div>
+            <textarea class="editor">Input text</textarea>
+        </div>
+    </div>
+
+    <script>
+        const editor = document.querySelector('.editor');
+
+        function textBold()
+        {
+            editor.style.fontWeight = (editor.style.fontWeight === 'bold') ? '' : 'bold';
+        }
+
+        function textItalic()
+        {
+            editor.style.fontStyle = (editor.style.fontStyle === 'italic') ? '' : 'italic';
+        }
+
+        function textUnderline()
+        {
+            editor.style.textDecoration = (editor.style.textDecoration === 'underline') ? '' : 'underline';
+        }
+
+        function reset()
+        {
+            editor.style.fontWeight = '';
+            editor.style.fontStyle = '';
+            editor.style.textDecoration = '';
+            editor.style.color = 'black';
+            editor.style.fontSize = '14px';
+            editor.style.fontFamily = 'Arial';
+        }
+
+        function setColor(color)
+        {
+            editor.style.color = `${color}`;
+        }
+
+        function setSize(size)
+        {
+            editor.style.fontSize = size + 'px';
+        }
+
+        function setFontFamily(fontFamily)
+        {
+            editor.style.fontFamily = `${fontFamily}`;
+        }
+    </script>
+</body>
+</html>

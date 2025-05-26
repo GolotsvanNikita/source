@@ -1,0 +1,115 @@
+body
+{
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
+}
+
+.container
+{
+    text-align: center;
+}
+
+img
+{
+    max-width: 320px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+img:hover
+{
+    transform: scale(1.02);
+}
+
+.controls
+{
+    border: none;
+    padding: 25px 30px;
+    display: inline-block;
+    border-radius: 16px;
+    background: #ffffffcc;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+label
+{
+    display: block;
+    margin: 20px 0 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+input[type="range"]
+{
+    width: 280px;
+    height: 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #e0e0e0;
+    border-radius: 5px;
+    outline: none;
+    transition: background 0.3s;
+}
+
+input[type="range"]::-webkit-slider-thumb
+{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    background: #65ace7;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover
+{
+    background: #65ace7;
+    transform: scale(1.15);
+}
+
+input[type="range"]::-moz-range-thumb
+{
+    width: 22px;
+    height: 22px;
+    background: #65ace7;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+input[type="range"]::-moz-range-thumb:hover
+{
+    background: #65ace7;
+    transform: scale(1.15);
+}
+
+input[type="range"]::-webkit-slider-runnable-track
+{
+    height: 10px;
+    background: linear-gradient(to right, #65ace7, #e0e0e0);
+    border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-track
+{
+    height: 10px;
+    background: linear-gradient(to right, #65ace7, #e0e0e0);
+    border-radius: 5px;
+}

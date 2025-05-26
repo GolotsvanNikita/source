@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .test{
+      width: 200px;
+      height: 300px;
+      background: #EF8D19;
+      margin: 20px;
+    }
+    button{
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <p>Lorem ipsum dolor.</p>
+  <button type="button">K</button>
+  
+
+  <script>
+    /*
+    Задание.
+    
+    При нажании на кнопку назначить тексту  и самой кнопке стиль курсив (наклонный) 
+    При повторном нажатии сбросить стиль.
+
+    Задание выполнить, используя условную конструкцию
+
+    */
+    const text = document.querySelector('p');
+    const button = document.querySelector('button');
+
+    let eventText = text.addEventListener('click', changeStyle);
+    let eventButton = button.addEventListener('click', changeStyle);
+
+    let isClick = false;
+    function changeStyle()
+    {
+      isClick = !isClick;
+      isClick ? (text.style.fontStyle = 'italic') && (button.style.fontStyle = 'italic') :
+              (text.style.fontStyle = '') && (button.style.fontStyle = '');
+    }
+  </script>
+</body>
+</html>

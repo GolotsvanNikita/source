@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    img{
+      position: absolute;
+      top: 100px;
+      left: 50px;
+      transition: 1s;
+    }
+    button{
+      margin: 50px;
+    }
+  </style>
+</head>
+<body>
+  <button type="button">Вперед</button>
+  <img src="ship.png" alt="">
+
+  <script>
+    /*
+    Задание.
+    Посмотрите на стили, назначенные img
+    При нажании на кнопку "Вперед" запустить движение корабля до 800px (используйте стиль left)
+    */
+    const button = document.querySelector('button');
+    const img = document.querySelector('img');
+
+    let event = button.addEventListener('click', Move);
+
+    function Move()
+    {
+      img.style.left = '800px';
+    }
+  </script>
+</body>
+</html>
