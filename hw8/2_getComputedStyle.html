@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 50px;
+    }
+    .big{
+      width: 400px;
+      height: 400px;
+      background: #8082B5;
+      margin-bottom: 50px;
+    }
+    .small{
+      width: 400px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .small>div{
+      width: 50px;
+      height: 50px;
+    }
+
+    .small>div:nth-child(1)
+    {
+      background: #8082B5;
+    }
+    .small>div:nth-child(2)
+    {
+      background: #87CEBB;
+    }
+    .small>div:nth-child(3)
+    {
+      background: #CA87CE;
+    }
+    .small>div:nth-child(4)
+    {
+      background: #B9E16D;
+    }
+  </style>
+</head>
+<body>
+  <div class="big"></div>
+  <div class="small">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <script>
+    /*
+      При клике на маленький див, изменять цвет большого на соответствующий.
+      Для обращения к диву, на который кликнули используйте this
+
+      Например, 
+      for (var i = 0; i < smallDivs.length; i++)
+      {
+        smallDivs[i].addEventListener('click', function(
+        {
+          console.log(this);
+        });
+      }
+
+    */
+    const bigDiv = document.querySelector('.big');
+    const smallDiv = document.querySelector('.small');
+    const smallDivs = smallDiv.querySelectorAll('div');
+
+    for (const div of smallDivs)
+    {
+        div.addEventListener('click', changeColor);
+    }
+
+    function changeColor()
+    {
+        const computedStyle = getComputedStyle(this).backgroundColor;
+        bigDiv.style.backgroundColor = `${computedStyle}`;
+        console.log(computedStyle);
+    }
+  </script>
+</body>
+</html>

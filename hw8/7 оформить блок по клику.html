@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		.item{
+			border:1px solid red;
+			margin: 10px;
+			width: 300px;
+			padding: 10px;
+		}
+
+		.item button{
+			width: 50px;
+			height: 30px;
+			background: #4A8FE4;
+			
+		}
+
+		.active{
+			background: #8497B7;
+			color: #fff;
+			font-size: 18px;
+			border: 2px solid #CEDAEE;
+		}
+	</style>
+</head>
+<body>
+	<div class="item">
+		<h2>Lorem ipsum.</h2>
+		<p>Lorem ipsum dolor sit amet.</p>
+		<button></button>
+	</div>
+	<div class="item">
+		<h2>Voluptates, accusantium!</h2>
+		<p>Qui culpa officiis esse quisquam!</p>
+		<button></button>
+	</div>
+	<div class="item">
+		<h2>Beatae, facere!</h2>
+		<p>Cum enim, perferendis illum nostrum.</p>
+		<button></button>
+	</div>
+	<div class="item">
+		<h2>Modi, velit.</h2>
+		<p>Commodi harum ducimus eveniet nemo.</p>
+		<button></button>
+	</div>
+	<div class="item">
+		<h2>Dolore, aliquid.</h2>
+		<p>Beatae harum nam unde sapiente.</p>
+		<button></button>
+	</div>
+	<div class="item">
+		<h2>Porro, accusantium.</h2>
+		<p>Unde veritatis, laudantium quidem molestias!</p>
+		<button></button>
+	</div>
+	<div class="item">
+		<h2>Repellat, officia.</h2>
+		<p>Cupiditate quos id, eum reiciendis.</p>
+		<button></button>
+	</div>
+	<div class="item">
+		<h2>Nesciunt, repellendus.</h2>
+		<p>Omnis rerum, enim quae placeat.</p>
+		<button></button>
+	</div>
+	<div class="item">
+		<h2>Fugit, beatae.</h2>
+		<p>Corporis ipsum, eum eos minima!</p>
+		<button></button>
+	</div>
+	<div class="item">
+		<h2>Adipisci, deserunt?</h2>
+		<p>Beatae aperiam distinctio, non reiciendis.</p>
+		<button></button>
+	</div>
+
+	<script>
+	/* 
+	При клике на кнопку  добавить/удалить класс active соответствующему родителю
+	*/
+	const buttons = document.querySelectorAll('button');
+
+	for (const button of buttons)
+	{
+		button.addEventListener('click', toggleActive);
+	}
+
+	function toggleActive()
+	{
+		this.parentNode.classList.toggle('active');
+	}
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+<title>Untitled Document</title>
+<style>
+    .box
+    {
+        width: 200px;
+        height: 200px;
+        font-family: Verdana;
+        background-color: #4A8FE4;
+        margin: 100px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: snow;
+        font-size: 30px;
+        border: 3px solid #8497B7;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+    <div class="box">Hover</div>
+
+  <script>
+    /*
+      Реализовать hover Effect с использованием animate.css
+    */
+    const box = document.querySelector('.box');
+
+    box.addEventListener('mouseenter', () =>
+    {
+        box.classList.add('animate__animated', 'animate__rubberBand');
+
+        box.addEventListener('animationend', () =>
+        {
+           box.classList.remove('animate__animated', 'animate__rubberBand');
+        }, {once: true} );
+    });
+
+  </script>
+
+</body>
+</html>

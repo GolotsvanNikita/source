@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Untitled Document</title>
+<style>
+  body{
+    height: 400vh;
+  }
+   section{
+    height:70vh;
+   }
+
+   .fon{
+     height:100vh;
+     overflow: hidden;
+
+   }
+   .bg{
+    background: url(images/health_tool_hero_medium.jpg) no-repeat center top;
+    -webkit-background-size: cover;
+    background-size: cover;
+    transition: 5s;
+    width: 200%;
+    height: 500vh; 
+    transform: scale(.7);
+    transform-origin: 0 0;
+   }
+
+   .move{
+    transform: scale(.5);
+   }
+</style>
+</head>
+
+<body>
+  <section></section>
+  <section class = 'fon'>
+    <div class="bg"></div>
+  </section>
+
+  <script>
+    /*
+      При  scroll страницы
+      div.bg добавить класс move
+
+      девушка после скрола будет уменьшаться
+    */
+    const bg = document.querySelector('.bg')
+
+    window.addEventListener('scroll', move);
+
+    function move()
+    {
+        bg.classList.add('move')
+    }
+  </script>
+
+</body>
+</html>

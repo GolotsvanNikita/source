@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Untitled Document</title>
+<style>
+   body{
+      margin: 50px;
+    }
+    #big{
+      width: 400px;
+    }
+    #big img{
+      width: 100%;
+    }
+    #small{
+      width: 400px;
+      display: flex;
+      justify-content: space-between;
+    }
+</style>
+</head>
+
+<body>
+  <img src="images/1.png" id="big" >
+  <div id="small">
+  	  <a href="images/1.png"><img src="images/small1.png" ></a>
+      <a href="images/2.png"><img src="images/small2.png" ></a>
+      <a href="images/3.png"><img src="images/small3.png" ></a>
+  </div>
+
+  <script>
+    /*
+      При клике на ссылку с миниатюрой
+      1) запретить стандартный обработчик у ссылки
+        function changePhoto(event)
+        {
+          // запрет стандартного обработчика
+          event.preventDefault();
+        }
+      2) Для ссылки, на которой кликнули получить значение атрибута href 
+      ( используйте this)
+      3) img изменить src на полученное значение.
+      4) правильность изменения можно проконтролировать в инструментах разработчика в Elements
+    */
+    const links = document.querySelectorAll('#small a');
+
+    for (const link of links)
+    {
+        link.addEventListener('click', changePhoto);
+    }
+
+    function changePhoto(event)
+    {
+        const href = this.getArrtibute('href');
+        event.preventDefault();
+        document.querySelector('img').src = href;
+    }
+  </script>
+
+</body>
+</html>

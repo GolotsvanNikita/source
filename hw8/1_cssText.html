@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div class="test">123</div>
+  <script>
+    /*
+      Используя строку стилей cssText задайте div.test стили
+      ширину
+      высоту
+      цвет
+      скругление 10px
+      границу
+    */
+    const test = document.querySelector('.test');
+    test.style.cssText = 
+    `
+        width: 250px;
+        height: 150px;
+        color: blue;
+        border: solid red;
+        border-radius: 10px;
+    `;
+  </script>
+</body>
+</html>

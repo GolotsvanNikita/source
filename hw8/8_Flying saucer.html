@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Untitled Document</title>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+        img
+        {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+<button>Click</button>
+<img class="animated" src="images/flying_saucer_2.png" alt="">
+
+<script>
+    /*
+      При клике на кнопку должна эффектно появляться летающая тарелка, при следующем клике должна эффектно улетать
+
+      Рекомендации: 
+      подключить библиотеку animate.css
+      добавлять/удалять классы входа, выхода
+    */
+    const btn = document.querySelector('button');
+    const img = document.querySelector('img')
+
+    let isVisible = false;
+
+    btn.addEventListener('click', () =>
+    {
+        img.classList.remove('animate__backInDown', 'animate__bounceOutUp');
+
+        if (!isVisible)
+        {
+            img.style.display = 'block';
+            img.classList.add('animate__animated', 'animate__backInDown');
+            isVisible = true;
+        }
+        else
+        {
+            img.classList.add('animate__animated', 'animate__bounceOutUp');
+            img.addEventListener('animationend', hideAfterAnimation, { once: true });
+        }
+    });
+
+    function hideAfterAnimation()
+    {
+        img.style.display = 'none';
+        isVisible = false;
+    }
+
+</script>
+
+</body>
+</html>
