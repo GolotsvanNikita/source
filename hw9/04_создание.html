@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+  <button>Создать</button>
+  <div class="wrap"></div>
+  
+  <script>
+    /*
+    при нажатии на кнопку "Создать"
+    
+    создавать div c 
+    классом - item
+    стилями - ширина 100px, высота 100px, фон любой, внешние отступы 10px
+    содержимое - порядковый номер добавляемого дива
+
+    каждый следующий див добавлять в конец дива с классом wrap
+
+    */
+    const btn = document.querySelector('button');
+    const wrap = document.querySelector('.wrap');
+
+    btn.addEventListener('click', addContent);
+
+    let count = 0;
+    function addContent()
+    {
+      count++;
+      const el = document.createElement('div');
+      el.classList.add('item');
+      el.style.cssText =
+      `
+        width: 100px;
+        font-family: Arial;
+        height: 100px;
+        background-color: #6DD2D6;
+        margin: 10px;
+        text-align: center;
+        border-radius: 25px;
+        font-weight: bold;
+        text-decoration: underline;
+      `;
+      el.innerHTML = `Number ${count}`;
+      wrap.append(el);
+    }
+  </script>
+  
+</body>
+</html>

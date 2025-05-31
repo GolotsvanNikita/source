@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+  <button>Вставить до заголовка</button>
+  <h1>Lorem ipsum dolor.</h1>
+  
+  <script>
+    /*
+    при нажатии на кнопку добавить перед заголовком абзац с любым текстом
+
+    отработать 1 раз
+    */
+    const btn = document.querySelector('button');
+    const h1 = document.querySelector('h1');
+
+    btn.addEventListener('click', addP, {once: true});
+
+    function addP()
+    {
+      const el = document.createElement('p');
+      el.innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
+      h1.before(el);
+    }
+  </script>
+  
+</body>
+</html>

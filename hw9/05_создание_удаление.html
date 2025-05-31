@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+  <button class="add">Создать</button>
+  <button class="delete">Удалить</button>
+  <div class="wrap"></div>
+  
+  <script>
+    /*
+    на базе предыдущето задания
+    
+    при нажатии на кнопку "Создать"            
+              создавать div c 
+              классом - item
+              стилями - ширина 100px, высота 100px, фон любой, внешние отступы 10px
+              содержимое - порядковый номер добавляемого дива
+
+              каждый следующий див добавлять в конец дива с классом wrap
+
+    при нажатии на кнопку "Удалить"
+              удалять 1 div.item с конца
+              ! Добавить проверку если нет ни одного div.item удаление не выполнять
+    */
+    const btnAdd = document.querySelector('.add');
+    const btnDelete = document.querySelector('.delete');
+    const wrap = document.querySelector('.wrap');
+
+    btnAdd.addEventListener('click', addContent);
+    btnDelete.addEventListener('click', removeContent);
+
+    let count = 0;
+    function addContent()
+    {
+      count++;
+      const el = document.createElement('div');
+      el.classList.add('item');
+      el.style.cssText =
+              `
+        width: 100px;
+        font-family: Arial;
+        height: 100px;
+        background-color: #6DD2D6;
+        margin: 10px;
+        text-align: center;
+        border-radius: 25px;
+        font-weight: bold;
+        text-decoration: underline;
+      `;
+      el.innerHTML = `Number ${count}`;
+      wrap.append(el);
+    }
+
+    function removeContent()
+    {
+      const elms = document.querySelectorAll('.item')
+      if (!(count === 0))
+      {
+        elms[--count].remove();
+      }
+    }
+  </script>
+  
+</body>
+</html>

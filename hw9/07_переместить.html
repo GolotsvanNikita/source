@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+  <button>Переместить до...</button>
+  <h1>Lorem ipsum dolor.</h1>
+  <ul>
+    <li>Lorem ipsum.</li>
+    <li>Lorem ipsum.</li>
+    <li>Lorem ipsum.</li>
+  </ul>
+  
+  <script>
+    /*
+    при нажатии на кнопку переместить список, расположить  перед заголовком 
+
+    отработать 1 раз
+    */
+    const btn = document.querySelector('button');
+    const ul = document.querySelector('ul');
+    const h1 = document.querySelector('h1');
+
+    btn.addEventListener('click', replace, {once: true});
+
+    function replace()
+    {
+      h1.before(ul);
+    }
+  </script>
+  
+</body>
+</html>
