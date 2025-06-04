@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <form name="form1" class="form-block">
+            <p class="form-title">Add new message:</p>
+
+            <label class="form-label">
+                Your name:
+                <input type="text" name="name" class="form-input" placeholder="Name">
+            </label>
+
+            <label class="form-label">
+                Your message:
+                <textarea name="message" cols="30" rows="4" class="form-textarea" placeholder="Message"></textarea>
+            </label>
+
+            <button type="submit" class="form-button">Send</button>
+        </form>
+    </div>
+
+    <div class="container2">
+        <h2>User info</h2>
+
+        <form name="form2">
+            <label>
+                First Name:
+                <input type="text" name="firstName" required placeholder="Your First Name">
+            </label>
+            <label>
+                Last Name:
+                <input type="text" name="lastName" required placeholder="Your Last Name">
+            </label>
+
+            <label>
+                Year of birth:
+                <input type="number" name="birthYear" required placeholder="e.g. 1990">
+            </label>
+            <label>
+                Gender:
+                <select name="gender" required>
+                    <option selected hidden="hidden"></option>
+                    <option>male</option>
+                    <option>female</option>
+                </select>
+            </label>
+
+            <label>
+                Phone number:
+                <input type="text" name="phone" placeholder="e.g. (123) 456-78-90">
+            </label>
+            <label>
+                Skype:
+                <input type="text" name="skype" placeholder="Your Skype">
+            </label>
+
+            <button type="submit">Save</button>
+        </form>
+    </div>
+
+    <script>
+        let year = new Date().getFullYear();
+        const form1 = document.forms.form1;
+        const form2 = document.forms.form2;
+
+        form1.addEventListener('submit', (e) =>
+        {
+            e.preventDefault();
+
+            let div = document.createElement('div');
+            let name = document.createElement('h2');
+            let message = document.createElement('p');
+
+            name.innerHTML = form1.elements.name.value;
+            message.innerHTML = form1.elements.message.value;
+
+            div.style.cssText =
+            `
+                background-color: #f5e7d6;
+                border: 1px solid #ccc;
+                padding: 10px 15px;
+                margin-bottom: 15px;
+                border-radius: 20px;
+            `;
+
+            name.style.cssText =
+            `
+                margin: 0 0 10px;
+                font-size: 16px;
+                font-weight: bold;
+                border-bottom: 1px dashed #bbb;
+                padding-bottom: 5px;
+            `;
+
+            message.style.cssText =
+            `
+                margin: 0;
+                font-size: 14px;
+                line-height: 1.4;
+            `;
+
+            div.append(name);
+            div.append(message);
+            form1.before(div);
+        });
+
+        form2.addEventListener('submit', (e) =>
+        {
+           e.preventDefault();
+           const birth = form2.elements.birthYear.value;
+           let regName = /^\w{5,20}$/;
+           let regBirth = /^\d{4}$/;
+           let regNumber = /^(?=(?:.*\d){10,12})[0-9\s()-]+$/;
+           let regSkype = /^[0-9A-Za-z-.]+$/;
+
+           if (regName.test(form2.elements.firstName.value) && regName.test(form2.elements.lastName.value))
+           {
+               console.log(`First Name: ${form2.elements.firstName.value}\nLast Name: ${form2.elements.lastName.value}`);
+           }
+           else
+           {
+               console.log('Error: First Name or Last Name in not 5 to 20 range letters.');
+           }
+
+           if (form2.elements.phone.value !== '')
+           {
+               if (regNumber.test(form2.elements.phone.value))
+               {
+                   console.log(`Phone: ${form2.elements.phone.value}`);
+               }
+               else
+               {
+                   console.log('Error: Phone Number is Incorrect.');
+               }
+           }
+
+           if (regBirth.test(birth) && +birth >= 1900 && +birth <= year)
+           {
+               console.log(`Birth Year: ${birth}`);
+               console.log(`Gender: ${form2.elements.gender.value}`)
+           }
+           else
+           {
+               console.log('Error: Birth Year is Incorrect.');
+           }
+
+           if (form2.elements.skype.value !== '')
+           {
+               if (regSkype.test(form2.elements.skype.value))
+               {
+                   console.log(`Skype: ${form2.elements.skype.value}`);
+               }
+               else
+               {
+                   console.log('Error: Skype is Incorrect');
+               }
+           }
+        });
+    </script>
+</body>
+</html>
