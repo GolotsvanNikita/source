@@ -1,0 +1,104 @@
+body
+{
+    font-family: Calibri, serif;
+}
+
+h1
+{
+    text-align: center;
+    color: #222;
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+h1::after
+{
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #007bff;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+form.add
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+form.add .inputs
+{
+    display: flex;
+    gap: 10px;
+}
+
+form.add input
+{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 150px;
+}
+
+form.add button
+{
+    width: 100%;
+    max-width: 150px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+form.add button:hover
+{
+    transform: scale(1.1);
+}
+
+#studentList
+{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#studentList > div
+{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#studentList button
+{
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#studentList button:hover
+{
+    box-shadow: 0 0 15px rgba(220, 53, 69, 0.5);
+}
